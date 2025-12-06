@@ -1,0 +1,10 @@
+[('C', 'GS'),
+ ('AXP', 'BAC'),
+ ('GS', 'WFC'),
+ ('COP', 'EOG'),
+ ('MS', 'WFC'),
+ ('JPM', 'WFC'),
+ ('C', 'JPM'),
+ ('BAC', 'MS'),
+ ('AXP', 'MS'),
+ ('GS', 'JPM')]
