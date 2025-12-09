@@ -1,0 +1,101 @@
+
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+<!-- global stylesheet -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Page Specific Stylesheet -->
+<link rel="stylesheet" href="css/signals.css">
+</head>
+
+<body>
+<!-- header section     -->
+    <div class="header">
+        <h1 class="header-title">Pairs Trading Dashboard</h1>
+    </div>
+
+
+    <main class = "main-content">
+
+<!-- description section -->
+    <div class="description">
+        <p>This dashboard tracks signal activity across the 15-pair portfolio  since November 12, 2025. Metrics include signal frequency, average  divergence duration, and confidence distribution. Use this data to  validate strategy effectiveness and identify the most active pairs.</p>
+        
+    </div>
+<!-- call out section -->
+    <div class="data-signals-block">
+
+        <div class="total-signals">
+            <p class="signals-block-header">Total Signals</p>
+            <p class="total-signals-value">127</p>
+            <p class="total-signals-footnote">Since Nov 12, 2025</p>
+        </div>
+        <div class="active-today">
+            <p class="signals-block-header">Active Today</p>
+            <p class="active-today-value">5</p>
+            <div class="active-today-footnote">
+                <div class="active-today-footnote-label-up">
+                    <p class="active-today-footnote-arrow">▲</p>
+                    <p class="active-today-footnote-value">2</p>
+                </div>
+                <div class="active-today-footnote-label-down">
+                    <p class="active-today-footnote-arrow">▲</p>
+                    <p class="active-today-footnote-down">3</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="average-duration">
+            <p class="signals-block-header">Average Duration</p>
+            <p class="average-duration-value">4.2 Days</p>
+            <p class="average-duration-footnote">(Divergence)</p>
+        </div>
+        <div class="signal-frequency">
+            <p class="signals-block-header">Signals Frequency</p>
+            <p class="signal-frequency-value">8.5 / Week</p>
+            <p class="signal-frequency-footnote">(All Pairs)</p>
+        </div>
+
+    </div>
+
+<!-- Main chart block     -->
+    <div class="main-chart-block">
+
+        <div class="left-chart-block">
+            <div class="signals-trend-chart">
+                <p class="chart-header">Signals over Time</p>
+                <p>Chart will go here (delete)</p>
+            </div>
+            <div class="signals-distribution-table-block">
+                <div class="distribution-chart">
+                    <p class="chart-header">Signal Duration Distribution</p>
+                    <p>Distribution chart will go here (delete)</p>
+                </div>
+                <div class="detail-table">
+                    <p class="chart-header">Recent Signals History</p>
+                    <p>History table will go here (delete)</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="right-chart-block">
+            <p class="chart-header">Signal Frequency by Pair</p>
+            <p>History table will go here (delete)</p>
+
+        </div>
+
+
+
+    </div>
+    </main>
+
+
+<!-- footer section -->
+    <div class="footer">
+        <div class="footer-data">
+            <p>Data Last Updated:</p>
+            <p>[Timestamp goes here]</p>
+        </div>
+    </div>
+</body>

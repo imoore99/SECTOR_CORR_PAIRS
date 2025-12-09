@@ -1,0 +1,141 @@
+
+:root {
+    --background-body: #293146;
+    --border-color: #642D39;
+    --background-call-out: #344254;
+    --text-color: #ffffff;
+    font-family: 'Martian Mono', monospace;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.description p {
+    margin: 5px 0;
+    line-height: 1.35;
+}
+
+.data-signals-block {
+    display: flex;
+    justify-content: space-between;
+    margin:0;
+}
+
+.total-signals, .active-today, .average-duration, .signal-frequency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex: 1;
+
+    background-color: var(--background-call-out);
+
+    border: 3px solid var(--border-color);
+}
+
+.total-signals {
+    margin: 0 5px 0 0;
+}
+.active-today, .average-duration {
+    margin: 0 5px;
+}
+
+.signal-frequency {
+    margin: 0 0 0 5px;
+}
+.signals-block-header, .active-today-header, .average-duration-header, .signal-frequency-header {
+    font-size: 28px;
+    font-weight: 600;
+
+    margin: 10px 0;
+}
+
+.total-signals-value, .active-today-value, .average-duration-value, .signal-frequency-value {
+    font-size: 24px;
+    font-weight: 300;
+
+    margin: 10px 0;
+}
+
+
+.total-signals-footnote, .active-today-footnote, .average-duration-footnote, .signal-frequency-footnote {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.active-today-footnote {
+    display:flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.active-today-footnote-label-up, .active-today-footnote-label-down {
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-chart-block {
+    width:100%;
+    display: flex;
+    margin: 0;
+}
+
+.chart-header {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.left-chart-block {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
+
+.signals-trend-chart {
+    padding: 0 0 0 10px;
+    border: 3px solid var(--border-color);
+    background-color: var(--background-call-out);
+}
+
+.signals-distribution-table-block {
+    display: flex;
+    margin: 5px 0 0 0;
+}
+
+.distribution-chart, .detail-table {
+    width: 50%;
+    padding: 0 0 0 10px;
+    border: 3px solid var(--border-color);
+    background-color: var(--background-call-out);
+}
+
+.distribution-chart {
+    margin: 5px 5px 0 0;
+}
+
+.detail-table {
+    margin: 5px 0 0 5px;
+}
+
+.right-chart-block {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 10px;
+
+    border: 2px solid var(--border-color);
+    background-color: var(--background-call-out);
+}

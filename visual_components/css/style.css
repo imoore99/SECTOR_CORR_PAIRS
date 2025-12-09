@@ -1,10 +1,10 @@
 
 :root {
     --background-body: #293146;
+    --text-color: #ffffff;
     font-family: 'Martian Mono', monospace;
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
-
 
 body {
     font-family: 'Martian Mono', monospace;
@@ -12,59 +12,55 @@ body {
     min-height:100vh;
     margin: 0 auto;
     background-color: var(--background-body);
+    color: var(--text-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a {
+    color: var(--text-color)
 }
 
 /*header styles*/
 .header {
-    /* height: 10%; */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0;
 }
+
 .header-title {
     margin: 0;
-    color: white;
     font-size: 64px;
     font-weight: 400;
+    line-height: 1;
 }
 
-.description {
+.main-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: white;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 10px 0;
-}
-.description p {
-    margin: 5px 0;
+    justify-content: start;
+    gap: 10px;
 }
 
-.position-call-out {
+
+/* footer styling */
+.footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    background-color: #344254;
-    border: 3px solid #642D39;
-    margin-top: 10px;
-    
+    margin: 20px 0;
 }
 
-.pair-call-out {
-    font-size: 36px;
-    color: white;
-    margin: 0;
-}
-.pair-action {
-    font-size: 30px;
-    color: white;
-    margin: 0;
-}
-.pair-z-score {
-    font-size: 30px;
-    color: white;
-    margin: 0;
-}
+.footer-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 0 10px;
 
+    font-size: 12px;
+    font-weight: 100;
+}

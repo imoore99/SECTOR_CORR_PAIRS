@@ -1,0 +1,60 @@
+
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+<!-- global stylesheet -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Page Specific Stylesheet -->
+<link rel="stylesheet" href="css/select.css">
+</head>
+
+<body>
+<!-- header section     -->
+    <div class="header">
+        <h1 class="header-title">Pairs Trading Dashboard</h1>
+    </div>
+
+    <main class = "main-content">
+
+<!-- description section -->
+    <div class="description">
+        <p>These 15 equity pairs were identified from 780 possible combinations  (40 large-cap stocks) using 252-day rolling correlation and Engle-Granger  cointegration tests as of November 12, 2024. Selection criteria: correlation  > 0.75, cointegration p-value < 0.10. </p>
+        <p>Active signals are generated when pair spreads diverge beyond ±2 standard deviations, indicating potential mean-reversion opportunities.</p>
+        <p>The heatmap displays CURRENT pairwise correlation (rolling 252-day window,  updated daily) to monitor relationship stability. Darker orange cells indicate  stronger correlation.</p>
+    </div>
+<!-- initial state section -->
+    <div class="data-block">
+
+        <div class="initial-state-block">
+                <p class="chart-header">Initial State of Selected Pairs</p>
+                <p>table will go here (delete)</p>
+                <svg>chart</svg>
+        </div> 
+
+<!-- current signals section -->
+        <div class="current-signals-block">
+                <p class="chart-header">Current Signals for Identified Pairs</p>
+                <p>table will go here (delete)</p>
+                <svg>chart</svg>
+        </div> 
+
+<!-- current coorelations section -->
+        <div class="current-correlations-block">
+                <p class="chart-header">Current Correlations for all 40 stocks</p>
+                <p>table will go here (delete)</p>
+                <svg>chart</svg>
+        </div> 
+
+    </div>
+    </main>
+
+
+<!-- footer section -->
+    <div class="footer">
+        <div class="footer-data">
+            <p>Data Last Updated:</p>
+            <p>[Timestamp goes here]</p>
+        </div>
+    </div>
+</body>

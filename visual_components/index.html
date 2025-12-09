@@ -3,31 +3,96 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<!-- global stylesheet -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Page Specific Stylesheet -->
+<link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-
+<!-- header section     -->
     <div class="header">
         <h1 class="header-title">Pairs Trading Dashboard</h1>
         <select class="pair-dropdown">
-            <option>AXP / BAC</option>
-            <option>BAC / WFC</option>
         </select>
-        </div>
     </div>
 
+
+    <main class = "main-content">
+
+<!-- description section -->
     <div class="description">
         <p>Automated statistical arbitrage signal generator using cointegration analysis and mean-reversion strategies. This dashboard monitors 15 equity pairs across financials, energy, and retail sectors, identifying trading opportunities when pairs diverge beyond ±2 standard deviations. </p>
         <p>Methodology: Pairs were identified using 252-day rolling correlation and  Engle-Granger cointegration tests (p < 0.10) as of November 12, 2024.  Signals generated when spread Z-scores exceed ±2σ thresholds. Built with AWS Lambda (Python), D3.js, and real-time data from Yahoo Finance.</p>
-        <p>[GitHub link] [ianmooreanalytics.com]</p>
+        <p><a href="https://github.com/imoore99/SECTOR_CORR_PAIRS" target="_blank">[github link]</a> <a href="https://ianmooreanalytics.com" target="_blank">[ianmooreanalytics.com]</a></p>
     </div>
-
+<!-- call section -->
     <div class="position-call-out">
         <p class="pair-call-out">AXP / BAC</p>
         <p class="pair-action">🔴 SELL AXP / BUY BAC</p>
         <p class="pair-z-score">Z-SCORE: +2.85 ▲</p>
     </div>
+<!-- data and indicators section -->
+    <div class="data-indicators-block">
+        <!-- left indicators -->
+        <div class="left-indicators-section">
+            <div class="p-value indicator-div">
+                <p>P-Value: </p>
+                <p class="p-value-decimal">0.0002 </p>
+                <p> | </p>
+                <p class="p-value-confidence">High Confidence </p>
+                <p> | </p>
+                <p class="p-value-stars">⭐⭐⭐</p>
+            </div>
+            <div class="signal-strength indicator-div">
+                <p>Signal Strength: </p>
+                <p class="signal-strength-indicator">Strong Divergence</p>
+            </div>
+        </div>
+        <!-- right indicators -->
+        <div class="right-indicators-section">
+            <div class="signal-status">
+                <p>Status:</p>
+                <p class="signal-status-position">Diverged</p>
+                <p class="signal-status-days">(3 Days)</p>
+            </div>
+            <div class="z-score-indicator">
+                <p>This is where the z-score indicator chart will go</p>
+            </div>
+        </div>
+    </div>
+<!-- charts section -->
+    <div class="charts-block">
+        <div class="z-score-chart-section">
+            <div class="chart-header">
+                <p class="chart-header-pair">AXP / BAC</p> 
+                <p class="chart-header-label">Z-Scores</p>
+            </div>
+            <p>chart will go here (delete)</p>
+            <svg>chart</svg>
+        </div>
+        <div class="normalized-chart-section">
+            <div class="chart-header">
+                <p class="chart-header-pair">AXP / BAC</p> 
+                <p class="chart-header-label">Normalized Prices</p>
+            </div>
+            <p>chart will go here (delete)</p>
+            <svg>chart</svg>
+        </div>        
+    </div>
+     
+    </main>
 
 
+<!-- footer section -->
+    <div class="footer">
+        <div class="footer-data">
+            <p>Data Last Updated:</p>
+            <p>[Timestamp goes here]</p>
+        </div>
+    </div>
 </body>
+
+<!-- <script src="01-step-count/assets/d3.min.js"></script> -->
+<script src="js/sampleData.js"></script>
+<script src="js/index.js"></script>

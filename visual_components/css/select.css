@@ -1,0 +1,62 @@
+
+:root {
+    --background-body: #293146;
+    --border-color: #642D39;
+    --background-call-out: #344254;
+    --text-color: #ffffff;
+    font-family: 'Martian Mono', monospace;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.description p {
+    margin: 5px 0;
+    line-height: 1.35;
+}
+
+.data-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.initial-state-block, .current-signals-block, .current-correlations-block {
+    border: 3px solid var(--border-color);
+    padding: 10px 0 0 10px;
+
+    background-color: var(--background-call-out);
+}
+
+.initial-state-block{
+    margin: 0 5px 0 0;
+}
+
+.current-signals-block {
+    margin: 0 5px;
+}
+
+.current-correlations-block {
+    margin: 0 0 0 5px;
+}
+
+.initial-state-block {
+    flex:2;
+}
+
+.current-signals-block, .current-correlations-block {
+    flex: 3;
+}
+
+.chart-header {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
