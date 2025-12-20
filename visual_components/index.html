@@ -28,9 +28,9 @@
     </div>
 <!-- call section -->
     <div class="position-call-out">
-        <p class="pair-call-out">AXP / BAC</p>
-        <p class="pair-action">🔴 SELL AXP / BUY BAC</p>
-        <p class="pair-z-score">Z-SCORE: +2.85 ▲</p>
+        <p class="pair-call-out">-</p>
+        <p class="pair-action">-</p>
+        <p class="pair-z-score">-</p>
     </div>
 <!-- data and indicators section -->
     <div class="data-indicators-block">
@@ -38,15 +38,15 @@
         <div class="left-indicators-section">
             <div class="p-value indicator-div">
                 <p>P-Value: </p>
-                <p class="p-value-decimal">0.0002 </p>
+                <p class="p-value-decimal">-</p>
                 <p> | </p>
-                <p class="p-value-confidence">High Confidence </p>
+                <p class="p-value-confidence">-</p>
                 <p> | </p>
-                <p class="p-value-stars">⭐⭐⭐</p>
+                <p class="p-value-stars">-</p>
             </div>
             <div class="signal-strength indicator-div">
                 <p>Signal Strength: </p>
-                <p class="signal-strength-indicator">Strong Divergence</p>
+                <p class="signal-strength-indicator">-</p>
             </div>
         </div>
         <!-- right indicators -->
@@ -56,9 +56,21 @@
                 <p class="signal-status-position">Diverged</p>
                 <p class="signal-status-days">(3 Days)</p>
             </div>
-            <div class="z-score-indicator">
-                <p>This is where the z-score indicator chart will go</p>
+        <div class="z-score-indicator">
+            <p class="z-score-label">Recent Z-Scores: </p>
+            <svg class="z-score-heatmap"></svg>
+            <!-- <div class="z-score-labels">
+                <span>-4</span>
+                <span>-2</span>
+                <span>0</span>
+                <span>+2</span>
+                <span>+4</span>
             </div>
+            <div class="z-score-bar">
+                <div class="z-score-fill"></div>
+            </div>
+        </div> -->
+    </div>
         </div>
     </div>
 <!-- charts section -->
@@ -68,16 +80,14 @@
                 <p class="chart-header-pair">AXP / BAC</p> 
                 <p class="chart-header-label">Z-Scores</p>
             </div>
-            <p>chart will go here (delete)</p>
-            <svg>chart</svg>
+            <svg class="z-score-chart"></svg>
         </div>
         <div class="normalized-chart-section">
             <div class="chart-header">
                 <p class="chart-header-pair">AXP / BAC</p> 
                 <p class="chart-header-label">Normalized Prices</p>
             </div>
-            <p>chart will go here (delete)</p>
-            <svg>chart</svg>
+                <svg class="normalized-chart"></svg>
         </div>        
     </div>
      
@@ -94,5 +104,8 @@
 </body>
 
 <!-- <script src="01-step-count/assets/d3.min.js"></script> -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="js/sampleData.js"></script>
+<script src="js/sampleHistoryData.js"></script>
+<script src="js/sampleSpreadsHistory.js"></script>
 <script src="js/index.js"></script>
