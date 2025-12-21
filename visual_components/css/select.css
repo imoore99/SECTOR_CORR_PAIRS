@@ -28,7 +28,7 @@
     justify-content: space-between;
 }
 
-.initial-state-block, .current-signals-block, .current-correlations-block {
+.initial-state-block, .current-signals-block {
     border: 3px solid var(--border-color);
     padding: 10px 10px 0 10px;
 
@@ -38,19 +38,18 @@
 
 .initial-state-block{
     margin: 0 5px 0 0;
-    flex:2;
+    flex: 2;
 }
 
 .current-signals-block {
     margin: 0 5px;
 }
 
-.current-correlations-block {
-    margin: 0 0 0 5px;
-}
-
-.current-signals-block, .current-correlations-block {
+.current-signals-block {
     flex: 3;
+}
+.key-metrics-block {
+    flex: 2;
 }
 
 .chart-header {
@@ -62,7 +61,7 @@
 table {
     border: 1px solid #ffffff;
     border-collapse: collapse;
-    margin: 10px 0;
+    margin: 12px 0;
     width: 100%;
 }
 
@@ -76,32 +75,23 @@ th {
 td, tr {
     border-right: 1px solid #ffffff;
     border-collapse: collapse;
-    font-size: 12px;
-    padding: 5px 0;
+    font-size: 14px;
+    padding: 10px 0;
 
     text-align: center; /* Centers text horizontally */
     vertical-align: middle; /* Centers content vertically */
 }
 
 .current-signals-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-    width: 100%;
-    border: 2px solid red;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    list-style: none;
+    margin: 12px 0;
 
 }
 
-.current-signals-flex {
-    display: flex;
-    gap: 5px;
-    padding: 0 0 10px 0;
-    border: 2px dotted green;
-
-}
-
-.current-signal-badge {
-    flex: 1;
+div.current-signal-badge {
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -110,14 +100,18 @@ td, tr {
     background-color: tomato;
 }
 
+p {
+    padding: 1px 0;
+}
+
 
 .current-signal-badge p {
     margin: 2px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 p.current-signal-status {
-    font-size: 12px;
+    font-size: 14px;
     color: #ffffff;
     text-shadow:
     -1px -1px 0 #000000, /* Top-left shadow */
@@ -128,4 +122,53 @@ p.current-signal-status {
 
 p.current-signal-badge-header {
     font-size: 18px;
+}
+
+.key-metrics-block {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 5px;
+}
+
+.portfolio-statistics, .signal-distribution, .risk-metrics {
+    flex: 1;
+    background: var(--background-call-out);
+    border: 2px solid var(--border-color);
+
+}
+.portfolio-statistics {
+    margin: 0 0 5px 0;
+}
+
+.key-metrics-section-header {
+    margin:0;
+    padding: 10px 10px;
+    font-size: 18px;
+
+    border-bottom: 1px solid #ffffff;
+}
+
+.signal-distribution {
+    margin: 5px 0;
+}
+
+.risk-metrics {
+    margin: 5px 0 0 0;
+}
+
+.key-metrics-block p {
+    padding: 0 0 0 10px;
+}
+
+p.key-metrics-section-header {
+    margin:0;
+    padding: 10px 10px;
+    font-size: 24px;
+    font-weight: 600;
+
+    border-bottom: 1px solid #ffffff;
+}
+
+svg.bar-signal-distribution {
+    margin: 10px 0 0 0;
 }

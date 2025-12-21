@@ -28,7 +28,7 @@
     <div class="data-block">
 
         <div class="initial-state-block">
-                <p class="chart-header">Initial State of Selected Pairs</p>
+                <p class="chart-header">Original Selected Pairs</p>
                 <table class="selected-pairs-table">
                     <thead>
                         <tr>
@@ -53,36 +53,29 @@
         <div class="current-signals-block">
                 <p class="chart-header">Current Signals for Identified Pairs</p>
                 <div class="current-signals-wrapper">
-                    <div class="current-signals-flex">
-                        <div class="current-signal-badge">
-                            <p>AXP / BAC</p>
-                        </div>
-                        <div class="current-signal-badge">
-                            <p class="current-signal-badge-header">AXP / BAC</p>
-                            <p class="current-signal-status">STATUS: DIVERGED</p>
-                            <p>Z-SCORE: -2.85</p>
-                            <p>TIME: 1 DAYS</p>
-                            <p>CONFIDENCE: HIGH</p>
-                        </div>
-                        <div class="current-signal-badge">
-                            <p>AXP / BAC</p>
-                        </div>
-                    </div>
-                    <div class="current-signals-flex">
-                        <div class="current-signal-badge">
-                            <p>AXP / BAC</p>
-                        </div>
-                    </div>
                 </div>
         </div> 
 
 <!-- current coorelations section -->
-        <div class="current-correlations-block">
-                <p class="chart-header">Current Correlations for all 40 stocks</p>
-                <p>table will go here (delete)</p>
-                <svg>chart</svg>
+        <div class="key-metrics-block">
+                <div class="portfolio-statistics">
+                    <p class="key-metrics-section-header">Portfolio Statistics</p>
+                    <p class="active-signals">Active Signals:</p>
+                    <p class="avg-corr">Avg Correlation:</p>
+                    <p class="strongest-signal">Strongest Signal:</p>
+                    <p class="days-in-position">Days in Position:</p>
+                </div>
+                <div class="signal-distribution">
+                    <p class="key-metrics-section-header">Signal Distribution</p>
+                    <svg class="bar-signal-distribution"></svg>
+                </div>
+                <div class="risk-metrics">
+                    <p class="key-metrics-section-header">Risk Metrics</p>
+                    <p class="max-divergence"></p>
+                    <p class="avg-days-diverged"></p>
+                    <p class="corr-stability"></p>
+                </div>
         </div> 
-
     </div>
     </main>
 
@@ -98,5 +91,8 @@
 
 <!-- <script src="01-step-count/assets/d3.min.js"></script> -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="js/sampleData.js"></script>
+<script src="js/sampleHistoryData.js"></script>
+<script src="js/sampleCorrMatrix.js"></script>
 <script src="js/select.js"></script>
