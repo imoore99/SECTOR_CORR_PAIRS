@@ -3,10 +3,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <!-- global stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 <!-- Page Specific Stylesheet -->
 <link rel="stylesheet" href="css/select.css">
+
+
 
 </head>
 
@@ -17,10 +22,24 @@
     </div>
 
     <main class = "main-content">
+    <div id="sidebar">
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+            <label for="openSidebarMenu" class="sidebarIconToggle">
+                <div class="spinner diagonal part-1"></div>
+                <div class="spinner horizontal"></div>
+                <div class="spinner diagonal part-2"></div>
+            </label>
+            <div id="sidebarMenu">
+                <ul class="sidebarMenuInner">
+                <li><a href="index.html">Main Position</a></li>
+                <li id="active"><a href="select.html" >Selected Pairs</a></li>
+                </ul>
+            </div>
+        </div>
 
 <!-- description section -->
     <div class="description">
-        <p>These 15 equity pairs were identified from 780 possible combinations  (40 large-cap stocks) using 252-day rolling correlation and Engle-Granger  cointegration tests as of November 12, 2024. Selection criteria: correlation  > 0.75, cointegration p-value < 0.10. </p>
+        <p>These 15 equity pairs were identified from 780 possible combinations  (40 large-cap stocks) using 252-day rolling correlation and Engle-Granger  cointegration tests as of November 17, 2025. Selection criteria: correlation  > 0.75, cointegration p-value < 0.10. </p>
         <p>Active signals are generated when pair spreads diverge beyond ±2 standard deviations, indicating potential mean-reversion opportunities.</p>
         <p>The heatmap displays CURRENT pairwise correlation (rolling 252-day window,  updated daily) to monitor relationship stability. Darker orange cells indicate  stronger correlation.</p>
     </div>
@@ -84,7 +103,7 @@
     <div class="footer">
         <div class="footer-data">
             <p>Data Last Updated:</p>
-            <p>[Timestamp goes here]</p>
+            <p class = "update-timestamp">[Timestamp goes here]</p>
         </div>
     </div>
 </body>
@@ -94,5 +113,5 @@
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="js/sampleData.js"></script>
 <script src="js/sampleHistoryData.js"></script>
-<script src="js/sampleCorrMatrix.js"></script>
+<script src="js/sampleSpreadsHistory.js"></script>
 <script src="js/select.js"></script>

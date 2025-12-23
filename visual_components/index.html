@@ -3,6 +3,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- global stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 <!-- Page Specific Stylesheet -->
@@ -19,12 +22,30 @@
 
 
     <main class = "main-content">
+        <div id="sidebar">
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+            <label for="openSidebarMenu" class="sidebarIconToggle">
+                <div class="spinner diagonal part-1"></div>
+                <div class="spinner horizontal"></div>
+                <div class="spinner diagonal part-2"></div>
+            </label>
+            <div id="sidebarMenu">
+                <ul class="sidebarMenuInner">
+                <li id="active"><a href="index.html">Main Position</a></li>
+                <li><a href="select.html" >Selected Pairs</a></li>
+                </ul>
+            </div>
+        </div>
 
 <!-- description section -->
-    <div class="description">
+    <div class="description-desktop">
         <p>Automated statistical arbitrage signal generator using cointegration analysis and mean-reversion strategies. This dashboard monitors 15 equity pairs across financials, energy, and retail sectors, identifying trading opportunities when pairs diverge beyond ±2 standard deviations. </p>
-        <p>Methodology: Pairs were identified using 252-day rolling correlation and  Engle-Granger cointegration tests (p < 0.10) as of November 12, 2024.  Signals generated when spread Z-scores exceed ±2σ thresholds. Built with AWS Lambda (Python), D3.js, and real-time data from Yahoo Finance.</p>
+        <p>Methodology: Pairs were identified using 252-day rolling correlation and  Engle-Granger cointegration tests (p < 0.10) as of November 17, 2025.  Signals generated when spread Z-scores exceed ±2σ thresholds. Built with AWS Lambda (Python), D3.js, and real-time data from Yahoo Finance.</p>
         <p><a href="https://github.com/imoore99/SECTOR_CORR_PAIRS" target="_blank">[github link]</a> <a href="https://ianmooreanalytics.com" target="_blank">[ianmooreanalytics.com]</a></p>
+    </div>
+    <div class="description-mobile">
+        <p>Automated pairs trading dashboard monitoring 15 equity pairs. <em>View on desktop for full methodology.</em></p>
+        <p id="links"><a href="https://github.com/imoore99/SECTOR_CORR_PAIRS" target="_blank">[github link]</a> <a href="https://ianmooreanalytics.com" target="_blank">[ianmooreanalytics.com]</a></p>
     </div>
 <!-- call section -->
     <div class="position-call-out">
@@ -34,7 +55,7 @@
     </div>
 <!-- data and indicators section -->
     <div class="data-indicators-block">
-        <!-- left indicators -->
+ 
         <div class="left-indicators-section">
             <div class="p-value indicator-div">
                 <p>P-Value: </p>
@@ -49,28 +70,17 @@
                 <p class="signal-strength-indicator">-</p>
             </div>
         </div>
-        <!-- right indicators -->
+
         <div class="right-indicators-section">
             <div class="signal-status">
                 <p>Status:</p>
                 <p class="signal-status-position">Diverged</p>
                 <p class="signal-status-days">(3 Days)</p>
             </div>
-        <div class="z-score-indicator">
-            <p class="z-score-label">Recent Z-Scores: </p>
-            <svg class="z-score-heatmap"></svg>
-            <!-- <div class="z-score-labels">
-                <span>-4</span>
-                <span>-2</span>
-                <span>0</span>
-                <span>+2</span>
-                <span>+4</span>
+            <div class="z-score-indicator">
+                <p class="z-score-label">Recent Z-Scores: </p>
+                <svg class="z-score-heatmap"></svg>
             </div>
-            <div class="z-score-bar">
-                <div class="z-score-fill"></div>
-            </div>
-        </div> -->
-    </div>
         </div>
     </div>
 <!-- charts section -->
@@ -98,7 +108,7 @@
     <div class="footer">
         <div class="footer-data">
             <p>Data Last Updated:</p>
-            <p>[Timestamp goes here]</p>
+            <p class="update-timestamp">[Timestamp goes here]</p>
         </div>
     </div>
 </body>

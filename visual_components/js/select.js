@@ -87,6 +87,14 @@ function countDaysDiverged(pairId, spreadHistory) {
     return count;
 };
 
+const formatScoreDate = d3.utcFormat("%m-%d-%Y");
+const timestampData = sampleCurrentSignals.slice(-1)
+console.log(timestampData[0].date)
+
+const updateDate = formatScoreDate(new Date(timestampData[0].date))
+document.querySelector(".update-timestamp").innerHTML = updateDate
+
+
 // transform api data to match html and js structures previously built
 sampleCurrentSignals = sampleCurrentSignals.map(apiData => transformApiData(apiData));
 
@@ -240,5 +248,3 @@ document.querySelector(".max-divergence").innerHTML = `Max Divergence: ${riskMet
 document.querySelector(".avg-days-diverged").innerHTML = `Avg Days Diverged: ${riskMetrics.avgDaysDiverged} days`;
 document.querySelector(".corr-stability").innerHTML = `Correlation Stability: ${riskMetrics.correlationStability}`;
 
-const element = document.querySelector("p.max-divergence");
-console.log('Element found:', element);  // Should not be null

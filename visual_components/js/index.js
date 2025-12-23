@@ -94,7 +94,13 @@ function colorStroke(number) {
     } else {
         return "tomato"
     }
-}
+};
+
+const formatScoreDate = d3.utcFormat("%m-%d-%Y");
+const timestampData = sampleCurrentSignals.slice(-1);
+
+const updateDate = formatScoreDate(new Date(timestampData[0].date));
+document.querySelector(".update-timestamp").innerHTML = updateDate;
 
 
 // transform api data to match html and js structures previously built
@@ -169,9 +175,18 @@ zScoreHeatmap(initialNormalizedChart);
 
 function zScoreHeatmap(data) {
     const svg = d3.select("svg.z-score-heatmap");
-    svg.selectAll("*").remove();  // Clear everything
+    svg.selectAll("*").remove();
     
     const zscorehistory = data.slice(-7);
+    
+    // Check if mobile
+    const isMobile = window.innerWidth <= 1024;
+    const cellWidth = 60;
+    const cellHeight = isMobile ? 45 : 60;  // ← Dynamic height
+    const dateFontSize = isMobile ? "10px" : "10px";
+    const scoreFontSize = isMobile ? "12px" : "15px";
+    const dateY = isMobile ? 15 : 20;
+    const scoreY = isMobile ? 32 : 40;
     
     const heatmapScale = d3.scaleLinear()
         .domain([-2, -0.1, 0.1, 2])
@@ -182,48 +197,50 @@ function zScoreHeatmap(data) {
         .range(["#ffffff", "#ffffff","#293146","#293146", "#293146"]);
     
     const formatScoreDate = d3.utcFormat("%m-%d");
-    
-    // Create a group for each day
+
+    svg
+        .attr("viewBox", `0 0 ${cellWidth * 7} ${cellHeight}`)
+
+
+ // Create groups
     const heatmapGroups = svg
         .selectAll("g.heatmap")
         .data(zscorehistory)
         .enter()
         .append("g")
         .attr("class", "heatmap")
-        .attr("transform", (d, i) => `translate(${i * 66}, 0)`);
+        .attr("transform", (d, i) => `translate(${i * cellWidth}, 0)`);
     
-    // Add rect to EACH group
+    // Add rectangles
     heatmapGroups
         .append("rect")
         .attr("x", 0)
         .attr("y", 0)
-        .attr("width", 65)
-        .attr("height", 60)
-        .style("fill", d => heatmapScale(d.z_score));
+        .attr("width", cellWidth - 1)
+        .attr("height", cellHeight)
+        .style("fill", d => heatmapScale(d.z_score))
+        .attr("stroke", "#999")
+        .attr("stroke-width", 0.5);
     
-    // Add date text to EACH group
+    // Add date text
     heatmapGroups
         .append("text")
-        .attr("class", "z-score-date")
-        .attr("x", 30)
-        .attr("y", 20)
+        .attr("x", cellWidth / 2)
+        .attr("y", dateY)  // ← Dynamic position
         .attr("text-anchor", "middle")
         .text(d => formatScoreDate(new Date(d.date)))
-        .style("fill", (d, i) => { return fontScale(d.z_score)})
-        .style("font-size", "10px");
-        
+        .style("fill", (d, i) => {return fontScale(d.z_score)})
+        .style("font-size", dateFontSize);  // ← Dynamic font
     
-    // Add z-score value to EACH group
+    // Add z-score value
     heatmapGroups
         .append("text")
-        .attr("class", "z-score-value")
-        .attr("x", 30)
-        .attr("y", 45)
+        .attr("x", cellWidth / 2)
+        .attr("y", scoreY)  // ← Dynamic position
         .attr("text-anchor", "middle")
         .text(d => (Math.round(d.z_score * 100) / 100).toFixed(2))
-        .style("fill", (d, i) => { return fontScale(d.z_score)})
-        .style("font-size", "15px")
-        .style("font-weight", "00");
+        .style("fill", (d, i) => {return fontScale(d.z_score)})
+        .style("font-size", scoreFontSize);  // ← Dynamic font
 
 }
 
@@ -273,7 +290,7 @@ function NormalizedChart(chartData, stock1, stock2) {
     //generate svg chart
     svgNormChart
         .attr("viewBox", "0 0 800 500")
-        .attr("preserveAspectRatio", "none")
+        .attr("preserveAspectRatio", "xMidYMid meet")
         .style("width", "100%")
         .style("height", "100%")
         
@@ -296,7 +313,7 @@ function NormalizedChart(chartData, stock1, stock2) {
         .attr("class", "x-axis")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(xScale)
-            .ticks(8)
+            .ticks(window.innerWidth < 600 ? 4 : 8) // Half the ticks on mobile
             .tickFormat(d3.timeFormat("%b %y")))
         .style("font-size", "14px")
         .style("color", "white");
@@ -406,7 +423,7 @@ function zScoreChart(chartData, z_score) {
     //generate svg chart
     svgNormChart
         .attr("viewBox", "0 0 800 500")
-        .attr("preserveAspectRatio", "none")
+        .attr("preserveAspectRatio", "xMidYMid meet")
         .style("width", "100%")
         .style("height", "100%")
 
@@ -428,7 +445,7 @@ function zScoreChart(chartData, z_score) {
         .attr("class", "x-axis")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(xScale)
-            .ticks(8)
+            .ticks(window.innerWidth < 600 ? 4 : 8) // Half the ticks on mobile
             .tickFormat(d3.timeFormat("%b %y")))
         .style("font-size", "14px")
         .style("color", "white");
