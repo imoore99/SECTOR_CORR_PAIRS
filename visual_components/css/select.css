@@ -310,3 +310,20 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     transform: rotate(-135deg);
     margin-top: -9px;
 }
+
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+/* Tablets and smaller (< 1024px) */
+@media (max-width: 1024px) {
+    .data-block {
+        flex-direction:column;
+    }
+    .initial-state-block, .current-signals-block, .key-metrics-block{
+    flex: 1;
+    }
+
+
+}
