@@ -21,8 +21,7 @@ body {
     }
 }
 
-
-.description {
+.description-desktop {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,9 +29,31 @@ body {
     font-weight: 300;
 }
 
-.description p {
+.description-mobile {
+    display:none;
+}
+
+.description-desktop p {
     margin: 5px 0;
     line-height: 1.35;
+}
+
+/* Mobile description - hide by default */
+.description-mobile {
+    display: none;  /* ← Add !important temporarily to test */
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.description-mobile p {
+    margin: 5px 0;
+    line-height: 1.35;
+}
+
+.description-mobile em {
+    color: #ccc;
+    font-style: italic;
 }
 
 .data-block {
@@ -49,7 +70,7 @@ body {
 
 }
 
-.initial-state-block{
+.initial-state-block {
     margin: 0 5px 0 0;
     flex: 2;
 }
@@ -101,7 +122,6 @@ td, tr {
     gap: 20px;
     list-style: none;
     margin: 12px 0;
-
 }
 
 div.current-signal-badge {
@@ -318,12 +338,60 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 /* Tablets and smaller (< 1024px) */
 @media (max-width: 1024px) {
+    .chart-header {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
     .data-block {
         flex-direction:column;
     }
     .initial-state-block, .current-signals-block, .key-metrics-block{
-    flex: 1;
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .description-desktop {
+        display: none !important;
     }
 
+    .description-mobile {
+        display: block !important;
+
+        margin: 0 0 10px 0;
+    }
+
+    .description-mobile p {
+        line-height: 1.50;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header-title {
+        padding: 5px 0;
+    }
+
+    .current-signals-block {
+        margin: 10px 0;
+    }
+
+    .current-signals-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        list-style: none;
+        margin: 12px 0;
+    }    
+    p {
+    padding: 1px 0; 
+    }
 
 }
+
+@media (max-width: 450px) {
+    .header-title {
+        padding: 0;
+    }
+}
+
