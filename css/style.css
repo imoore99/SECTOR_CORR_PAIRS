@@ -79,7 +79,8 @@ a {
 @media (max-width: 1024px) {
 
     body {
-        max-width: 80%
+        max-width: 80%;
+        padding: 0px;
     }
 
     .header-title {
