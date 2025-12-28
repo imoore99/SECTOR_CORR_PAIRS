@@ -14,7 +14,7 @@ body {
     font-family: 'Martian Mono', monospace;
     max-width: 1500px;
     width: 100%;
-    padding: 0;
+    padding: 0 60px;
     min-height:100vh;
     margin: 0 auto;
     background-color: var(--background-body);
