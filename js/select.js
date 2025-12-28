@@ -94,16 +94,15 @@ export function initSelectPage(currentSignalsData, allSpreadsData, signalsHistor
         };
     };
 
-    // transform api data to match html and js structures previously built
-    currentSignalsData = currentSignalsData.map(apiData => transformApiData(apiData));
 
     const formatScoreDate = d3.utcFormat("%m-%d-%Y");
-    const timestampData = currentSignalsData.slice(-1)
+    const timestampData = currentSignalsData.slice(-1);
+    console.log(timestampData)
+    const updateDate = formatScoreDate(new Date(timestampData[0].last_updated));
+    document.querySelector(".update-timestamp").innerHTML = updateDate;
 
-    const updateDate = formatScoreDate(new Date(timestampData[0].date))
-    document.querySelector(".update-timestamp").innerHTML = updateDate
-
-
+    // transform api data to match html and js structures previously built
+    currentSignalsData = currentSignalsData.map(apiData => transformApiData(apiData));
     //Selected Pairs Badges
 
     const badgeSelectPairs = document.querySelector(".current-signals-wrapper")

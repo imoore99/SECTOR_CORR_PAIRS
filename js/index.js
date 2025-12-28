@@ -111,8 +111,7 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
 
     const formatScoreDate = d3.utcFormat("%m-%d-%Y");
     const timestampData = currentSignalsData.slice(-1);
-
-    const updateDate = formatScoreDate(new Date(timestampData[0].date));
+    const updateDate = formatScoreDate(new Date(timestampData[0].last_updated));
     document.querySelector(".update-timestamp").innerHTML = updateDate;
 
 
@@ -489,8 +488,6 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
             .attr("opacity", 0.6);
         }
     }
-
-
 
 
     dropdownTag.addEventListener('change', function() {
