@@ -2,9 +2,6 @@
 // Async data loading
 export function initSelectPage(currentSignalsData, allSpreadsData, signalsHistoryData, allPairs) {
 
-    console.log("select.js - currentSignslasData: ", currentSignalsData); 
-   
-
     //Page build starts here
     const tableSelectPairs = document.querySelector('.selected-pairs-table-body')
 
@@ -29,7 +26,6 @@ export function initSelectPage(currentSignalsData, allSpreadsData, signalsHistor
 
         // Append the completed row to the table body
         tableSelectPairs.append(newRow);
-        
     });
 
 
@@ -97,7 +93,6 @@ export function initSelectPage(currentSignalsData, allSpreadsData, signalsHistor
 
     const formatScoreDate = d3.utcFormat("%m-%d-%Y");
     const timestampData = currentSignalsData.slice(-1);
-    console.log(timestampData)
     const updateDate = formatScoreDate(new Date(timestampData[0].last_updated));
     document.querySelector(".update-timestamp").innerHTML = updateDate;
 
@@ -218,7 +213,6 @@ export function initSelectPage(currentSignalsData, allSpreadsData, signalsHistor
         .text(d => `${d.value}`)
         .style("fill", "white")
         .style("font-size", "18px");
-
 
     function calculateRiskMetrics(pairsData) {
         // Max divergence

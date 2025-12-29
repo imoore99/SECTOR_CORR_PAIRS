@@ -1,20 +1,10 @@
 
 export function initDashboard(currentSignalsData, allSpreadsData, signalsHistoryData, allPairs) {
-
-    console.log("initDashboard started");
-
-    // ... all the code you sent me goes here ...
-    console.log("index.js - currentSignslasData: ",currentSignalsData);
-    console.log("index.js - allPairs:", allPairs)
     
     const dropdownTag = document.querySelector('.pair-dropdown');
 
-    console.log("Checking dropdownTag:", dropdownTag);
-    console.log("Checking allPairs type:", Array.isArray(allPairs) ? "Array" : typeof allPairs);
-
     // If we aren't on the Dashboard page, just exit quietly
     if (!dropdownTag) {
-        console.error("STILL NULL: Is the script running before the HTML is ready?");
         return; 
     }
 
@@ -22,7 +12,6 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
     allPairs.forEach((pair, index) => {
         const optionTag = document.createElement('option');
         optionTag.value = pair.id;
-        console.log('pair.id:', pair.id)
         optionTag.innerHTML = pair.name;
         dropdownTag.appendChild(optionTag);
     });
@@ -250,12 +239,6 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
 
     }
 
-
-
-
-
-
-
     function NormalizedChart(chartData, stock1, stock2) {
 
         const svgNormChart = d3.select("svg.normalized-chart")
@@ -356,7 +339,6 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
             .attr("stroke", "steelblue")
             .attr("stroke-width", 2)
             
-
         //building the legend
         g.append("text")
             .attr("x", 20)
@@ -372,7 +354,6 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
             .style("font-size", "20px")
             .style("fill", "steelblue")
         
-
         xtickRange.slice(1, length+2).forEach(myFunction);
         
         function myFunction(i, index) {
@@ -387,7 +368,6 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
             .attr("opacity", 0.6);
         }
     }
-
 
     function zScoreChart(chartData, z_score) {
 
@@ -419,8 +399,8 @@ export function initDashboard(currentSignalsData, allSpreadsData, signalsHistory
 
         const xtickRange = [min];
         for (let i = 0; i < range_length+1; i++) {
-        const calculatedValue = min + i; // Example calculation (squares of indices)
-        xtickRange.push(calculatedValue); // Push the result of the calculation
+            const calculatedValue = min + i; // Example calculation (squares of indices)
+            xtickRange.push(calculatedValue); // Push the result of the calculation
         }
 
         //generate svg chart
